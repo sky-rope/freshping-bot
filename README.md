@@ -12,9 +12,12 @@ https://api.telegram.org/bot<YOUR API TOKEN FROM ABOVE>/getUpdates
 {"ok":true,"result":[{"update_id":642281183,
 "channel_post":{"message_id":4,"sender_chat":{"id":<YOUR CHAT ID>,"title":"alerts","type":"channel"},"chat":{"id":<YOUR CHAT ID>,"title":"alerts","type":"channel"},"date":1653577465,"text":"Test"}}]}
 ```
-5. Specify bot token and chat id in application settings as environment variables:
-- TELEGRAM_BOT_TOKEN = "YOUR API TOKEN"
-- TELEGRAM_CHAT_ID = "YOUR CHAT ID"
+5. Specify bot token and chat id in application settings as environment variables in docker-compose:
+```
+    environment:
+      TELEGRAM_BOT_TOKEN: "YOUR_BOT_TOKEN"
+      TELEGRAM_CHAT_ID: "TELEGRAM_CHAT_ID"
+```
 
 6. Expose application on publicly available URL. You can use Nginx as a reverse proxy with basic HTTP authorization.
 7. Configure Webhook Integration on the Freshping side, and pass your application URL and auth credentials.

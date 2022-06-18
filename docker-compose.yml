@@ -1,0 +1,9 @@
+version: '3.7'
+
+services:
+  freshping-bot:
+    image: ghcr.io/sky-rope/freshping-bot:latest
+    environment:
+      TELEGRAM_BOT_TOKEN: "YOUR_BOT_TOKEN"
+      TELEGRAM_CHAT_ID: "TELEGRAM_CHAT_ID"
+    ports: [ '9088:9088' ]
